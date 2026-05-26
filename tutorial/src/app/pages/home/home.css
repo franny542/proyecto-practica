@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-fondo: #f9fafb;
+  --color-texto: #111827;
+  --color-gris-claro: #e5e7eb;
+  --color-gris-texto: #6b7280;
+  --color-primario: #000000;
+  --color-blanco: #ffffff;
+  --transicion: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.home {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+.contenedor-simetrico {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  padding: 180px 0 140px 0; 
+  text-align: center;
+  background-image: url('https://silestoneinstitute.com/wp-content/uploads/2024/05/shutterstock_283562873-scaled-1-2560x1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.titulo-hogar {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(3rem, 6vw, 4.8rem); 
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  color: var(--color-primario); 
+  text-shadow: 
+    0px 2px 15px rgba(255, 255, 255, 0.9),
+    0px 4px 30px rgba(255, 255, 255, 0.6);
+}
+
+.barra-gruesa-gris {
+  width: 70px;
+  height: 5px;
+  background-color: var(--color-primario); 
+  margin: 0 auto 48px auto;
+  border-radius: 10px;
+}
+
+.caja-busqueda:focus-within {
+  transform: translateY(-4px) scale(1.01); 
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.05), 
+    0 30px 60px -10px rgba(0, 0, 0, 0.18),
+    0 0 0 2px var(--color-primario); 
+}
+
+.input-invisible {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-texto);
+  background: transparent;
+}
+
+.input-invisible::placeholder {
+  color: #000000; 
+  font-weight: 400;
+}
+
+.lupa-profesional {
+  width: 26px;
+  height: 26px;
+  color: var(--color-primario);
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.lupa-profesional:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.boton-ovalado {
+  background: rgba(244, 242, 242, 0.06); 
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-texto); 
+  cursor: pointer;
+  transition: var(--transicion);
+  backdrop-filter: blur(8px);
+}
+
+.boton-ovalado:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  color: var(--color-primario);
+}
+
+.boton-ovalado.activo {
+  background: var(--color-primario);
+  color: var(--color-blanco);
+  border-color: var(--color-primario);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.propuesta-valor {
+  padding: 120px 0;
+  background-color: var(--color-blanco);
+}
+
+.subtitulo-editorial {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 90px;
+  letter-spacing: -0.01em;
+}
+
+.grilla-pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px;
+}
+
+.pilar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.numero-editorial {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #5d5e5f; 
+  line-height: 1;
+  margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic; 
+}
+
+.pilar h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.pilar p {
+  color: var(--color-gris-texto);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.cta-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cta-lado {
+  flex: 1;
+  min-width: 320px;
+  padding: 120px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-contenido {
+  max-width: 440px;
+  text-align: center;
+}
+
+.cta-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.cta-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.cta-texto {
+  font-size: 1.1rem;
+  margin-bottom: 44px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.cta-lado.cliente {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.cta-lado.cliente .cta-tag {
+  color: var(--color-gris-texto);
+}
+
+.cta-lado.profesional {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.cta-lado.profesional .cta-tag {
+  color: var(--color-gris-claro);
+}
+
+.btn-cta-negro, .btn-cta-blanco {
+  display: inline-block;
+  padding: 18px 52px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  transition: var(--transicion);
+}
+
+.btn-cta-negro {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+.btn-cta-negro:hover {
+  background-color: #c0c0c0;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.btn-cta-blanco {
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+}
+
+.btn-cta-blanco:hover {
+  background-color: var(--color-gris-claro);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}

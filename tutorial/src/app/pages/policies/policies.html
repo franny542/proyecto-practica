@@ -1,0 +1,43 @@
+<div class="politicas-page">
+  
+  <header class="politicas-hero">
+    <div class="hero-overlay"></div>
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200" alt="Privacidad y Protección de Datos" class="hero-img">
+    <div class="hero-content">
+      <span class="hero-tag">Seguridad & Transparencia</span>
+      <h1>Políticas de Cookies</h1>
+      <p>Conoce cómo protegemos tus datos y mejoramos tu experiencia digital.</p>
+    </div>
+  </header>
+
+  <div class="contenedor-simetrico">
+    
+    <section class="intro-seccion">
+      <div class="intro-card">
+        <h2>Objetivo de la Política</h2>
+        <p>
+          Buscamos regular y normar el uso de herramientas y procedimientos para la captura 
+          y tratamiento de información. Esto nos permite realizar el análisis y rastreo de navegación 
+          web, asegurar la autenticación de información y optimizar las sesiones de los usuarios 
+          conforme a las disposiciones legales de protección a la vida privada.
+        </p>
+      </div>
+    </section>
+
+    <section class="dinamica-seccion">
+      <div class="seccion-titulo-container">
+        <h2>Clasificación y Propósitos</h2>
+        <div class="linea-decorativa"></div>
+      </div>
+
+      <div class="politicas-grid">
+        <div class="politica-card" *ngFor="let policy of policies; trackBy: trackByPolicy">
+          <div class="card-badge">ID: {{ policy.id }}</div>
+          <h3>{{ policy.title }}</h3>
+          <p>{{ policy.description }}</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

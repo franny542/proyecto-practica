@@ -1,0 +1,180 @@
+.banner, 
+.banner *, 
+.banner button {
+  box-sizing: border-box !important;
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;   
+  left: 0;     
+  width: 100%; 
+  
+  background: rgba(255, 255, 255, 0.92); 
+  backdrop-filter: blur(20px);          
+  -webkit-backdrop-filter: blur(20px);
+  
+  padding: 24px 40px; 
+  border-top: 1px solid #e5e7eb; 
+  
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 40px !important;
+  
+  z-index: 9999; 
+  font-family: 'Inter', sans-serif;
+  animation: deslizarSubida 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes deslizarSubida {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.banner-texto {
+  color: #4b5563; 
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
+  flex: 1 !important; 
+  text-align: left !important;
+}
+
+.banner-texto a {
+  color: #000000; 
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2); 
+  transition: all 0.2s ease;
+}
+.banner-texto a:hover { border-bottom-color: #000000; }
+
+.banner-botones {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.banner-botones button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 50px; 
+  cursor: pointer;
+  white-space: nowrap !important; 
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-aceptar { 
+  background-color: #000000; 
+  color: #ffffff; 
+  font-weight: 700 !important; 
+}
+
+.btn-aceptar:hover { 
+  background-color: #222222; 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.btn-config { 
+  background-color: #f3f4f6; 
+  color: #374151; 
+}
+
+.btn-config:hover { 
+  background-color: #e5e7eb; 
+  color: #000000; 
+}
+
+.btn-rechazar { 
+  background-color: transparent; 
+  color: #6b7280; 
+  border: 1px solid #e5e7eb !important; 
+}
+
+.btn-rechazar:hover { 
+  background-color: rgba(239, 68, 68, 0.05); 
+  color: #ef4444; 
+  border-color: rgba(239, 68, 68, 0.2) !important; 
+}
+
+.banner-botones button:active { 
+  transform: scale(0.98); 
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .banner {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;           
+    padding: 24px 40px !important;   
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;    
+  }
+
+  .banner-texto {
+    text-align: center !important;  
+    max-width: 100% !important;      
+    font-size: 0.9rem !important;
+  }
+
+  .banner-botones {
+    flex-direction: row !important;  
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 16px !important;            
+  }
+
+  .banner-botones button {
+    width: auto !important;          
+    padding: 12px 22px !important;   
+    white-space: nowrap !important;  
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    bottom: 16px !important;
+    left: 16px !important;
+    width: calc(100% - 32px) !important; 
+    padding: 20px !important;
+    border-radius: 20px !important;  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .banner-texto {
+    text-align: center !important;
+    font-size: 0.85rem !important;
+    max-width: 100% !important;
+  }
+
+  .banner-botones {
+    flex-direction: column !important; 
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .banner-botones button {
+    width: 100% !important;          
+    padding: 12px 16px !important;
+    white-space: normal !important;   
+    text-align: center !important;
+  }
+
+  .btn-aceptar {
+    order: -1 !important;            
+  }
+}

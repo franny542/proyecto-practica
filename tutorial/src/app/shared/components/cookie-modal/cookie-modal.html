@@ -1,0 +1,64 @@
+<div class="overlay" (click)="goBack()">
+  
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h2>Configuración de Cookies</h2>
+    <p class="modal-descripcion">
+      Personaliza tu experiencia. Activa o desactiva las categorías de cookies que deseas permitir:
+    </p>
+
+    <div class="switch-group">
+      
+      <div class="switch-item">
+        <div class="switch-info">
+          <span class="switch-titulo">Analíticas</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" [(ngModel)]="analytics">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="switch-item">
+        <div class="switch-info">
+          <span class="switch-titulo">Funcionales</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" [(ngModel)]="functional">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="switch-item">
+        <div class="switch-info">
+          <span class="switch-titulo">Comerciales</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" [(ngModel)]="commercial">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="switch-item">
+        <div class="switch-info">
+          <span class="switch-titulo">Marketing</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" [(ngModel)]="marketing">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+
+    <div class="modal-botones">
+      <button class="btn-volver" (click)="goBack()">
+        Volver
+      </button>
+      
+      <button class="btn-guardar" (click)="savePreferences()">
+        Guardar preferencias
+      </button>
+    </div>
+
+  </div>
+</div>

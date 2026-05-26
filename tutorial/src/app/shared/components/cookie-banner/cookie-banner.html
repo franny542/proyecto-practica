@@ -1,0 +1,49 @@
+<div class="banner" *ngIf="!cookiesAccepted">
+
+    <div class="banner-texto">
+
+        Este sitio web utiliza cookies para mejorar tu experiencia al navegar,
+        permitiendo personalizar el sitio.
+
+        Puedes ajustar tus preferencias en la configuración de cookies,
+        para más información revisa nuestra
+        <a routerLink="/policies">
+            Política de cookies
+        </a>
+
+    </div>
+
+    <div class="banner-botones">
+
+        <button
+            class="btn-config"
+            (click)="openModal()">
+
+            Configuración de cookies
+
+        </button>
+
+        <button
+            class="btn-rechazar"
+            (click)="rejectCookies()">
+
+            Rechazar no necesarias
+
+        </button>
+
+        <button
+            class="btn-aceptar"
+            (click)="acceptCookies()">
+
+            Aceptar todas
+
+        </button>
+
+    </div>
+
+</div>
+
+<app-cookie-modal
+    *ngIf="showModal"
+    (close)="closeModal()">
+</app-cookie-modal>
