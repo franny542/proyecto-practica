@@ -1,0 +1,6 @@
+@CookieApi_HostAddress = http://localhost:5053
+
+GET {{CookieApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
