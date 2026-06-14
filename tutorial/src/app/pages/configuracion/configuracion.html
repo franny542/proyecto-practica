@@ -1,0 +1,61 @@
+<div *ngIf="permitido">
+  <div class="configuracion-page">
+    
+    <div class="configuracion-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag"></span>
+        <h1>Configuración</h1>
+        <p>Gestión perimetral y parámetros globales del ecosistema Rukano.</p>
+      </div>
+    </div>
+
+    <div class="contenedor-simetrico">
+      
+      <div class="intro-seccion">
+        <div class="intro-card" style="border-left: 6px solid #d6d3d3;">
+          <h2>Panel de Control </h2>
+          <p>Bienvenido al módulo de configuracion, en esta sección se permiten alterar las configuraciones del sistema.</p>
+        </div>
+      </div>
+
+      <div class="gestion-roles-seccion" style="margin-top: 30px;">
+        
+        <div *ngIf="mensaje" style="padding: 12px; background-color: #d4edda; color: #155724; border-radius: 6px; margin-bottom: 20px; font-family: sans-serif; font-size: 14px; font-weight: 500;">
+          {{ mensaje }}
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; font-family: sans-serif;">
+          <thead>
+            <tr style="background-color: #fcfcfc; border-bottom: 2px solid #eee; text-align: left; color: #333; font-size: 14px;">
+              <th style="padding: 18px 15px;">ID Usuario</th>
+              <th style="padding: 18px 15px;">Correo Electrónico</th>
+              <th style="padding: 18px 15px;">Rol Actual</th>
+              <th style="padding: 18px 15px; text-align: center;">Acción Administrativa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios" style="border-bottom: 1px solid #f5f5f5; color: #444; font-size: 14px;">
+              <td style="padding: 16px 15px; color: #888;">#{{ usuario.id }}</td>
+              <td style="padding: 16px 15px; font-weight: 600;">{{ usuario.correo }}</td>
+              <td style="padding: 16px 15px;">
+                <span [style.background-color]="usuario.rol === 'admin' ? '#e12a3d' : '#2874f0'"
+                      style="color: white; padding: 5px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">
+                  {{ usuario.rol }}
+                </span>
+              </td>
+              <td style="padding: 16px 15px; text-align: center;">
+                <button (click)="cambiarRango(usuario)" 
+                        [style.background-color]="usuario.rol === 'admin' ? '#6c757d' : '#10b981'"
+                        style="color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 13px; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                  {{ usuario.rol === 'admin' ? 'Quitar Privilegios' : 'Hacer Admin' }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a434f7a4-da1f-4c72-bc74-d6aec14b3bd5/resourceGroups/gr-rukano/providers/Microsoft.Web/sites/api-rukano",
+    "appService.deploySubpath": "CookieApi"
+}

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Franny\\Desktop\\Proyecto-titulo\\CookieApi\\CookieApi.csproj": {}
+    "/Users/franciscaleon/Downloads/Proyecto-titulo/CookieApi/CookieApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Franny\\Desktop\\Proyecto-titulo\\CookieApi\\CookieApi.csproj": {
+    "/Users/franciscaleon/Downloads/Proyecto-titulo/CookieApi/CookieApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Franny\\Desktop\\Proyecto-titulo\\CookieApi\\CookieApi.csproj",
+        "projectUniqueName": "/Users/franciscaleon/Downloads/Proyecto-titulo/CookieApi/CookieApi.csproj",
         "projectName": "CookieApi",
-        "projectPath": "C:\\Users\\Franny\\Desktop\\Proyecto-titulo\\CookieApi\\CookieApi.csproj",
-        "packagesPath": "C:\\Users\\Franny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Franny\\Desktop\\Proyecto-titulo\\CookieApi\\obj\\",
+        "projectPath": "/Users/franciscaleon/Downloads/Proyecto-titulo/CookieApi/CookieApi.csproj",
+        "packagesPath": "/Users/franciscaleon/.nuget/packages/",
+        "outputPath": "/Users/franciscaleon/Downloads/Proyecto-titulo/CookieApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Franny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/franciscaleon/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -24,7 +24,6 @@
         },
         "frameworks": {
           "net8.0": {
-            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -38,14 +37,20 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "10.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -84,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.421/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

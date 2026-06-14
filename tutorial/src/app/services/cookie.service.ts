@@ -8,13 +8,10 @@ import { Policy } from '../models/policy';
 })
 export class CookieService {
 
-  private apiUrl = 'http://localhost:5053/api/policies';
+  private apiUrl = 'https://api-rukano-f0hafjcjd8dufqck.westus3-01.azurewebsites.net/api/policies';
 
   constructor(private http: HttpClient) {}
 
-  /* ==========================================
-     MÉTODOS API REST (C.R.U.D)
-     ========================================== */
   getPolicies(): Observable<Policy[]> {
     return this.http.get<Policy[]>(this.apiUrl);
   }

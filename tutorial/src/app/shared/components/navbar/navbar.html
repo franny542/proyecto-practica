@@ -17,7 +17,15 @@
     <div class="links">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
       <a routerLink="/policies" routerLinkActive="active">Políticas</a>
-      <a routerLink="/admin-policies" routerLinkActive="active">Admin</a>
+      
+      <a *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'usuario'" routerLink="/ultimas-conexiones" routerLinkActive="active">Últimas Conexiones</a>
+      
+      <a *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'admin'" routerLink="/admin-policies" routerLinkActive="active">Admin</a>
+      <a *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'admin'" routerLink="/configuracion" routerLinkActive="active">Configuración</a>
+      
+      <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="btn-login-nav">Iniciar Sesión</a>
+      
+      <a *ngIf="authService.isLoggedIn()" (click)="authService.logout()" class="btn-login-nav" style="background-color: #e12a3d; cursor: pointer;">Cerrar Sesión</a>
     </div>
 
   </div>

@@ -1,0 +1,48 @@
+<div *ngIf="permitido">
+
+  <div class="conexiones-page">
+    <div class="conexiones-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Últimas Conexiones</h1>
+        <p>Historial de accesos y registros en Rukano.</p>
+      </div>
+    </div>
+
+    <div class="contenedor-simetrico">
+      <div *ngIf="cargando" class="loading-box">
+        <p>Consultando bitácora de conexiones de forma segura...</p>
+      </div>
+
+      <div *ngIf="!cargando && logs.length > 0" class="tabla-contenedor">
+        <table class="tabla-premium">
+          <thead>
+            <tr>
+              <th>ID Log</th>
+              <th>Usuario / Correo</th>
+              <th>Fecha y Hora (Local)</th>
+              <th>Dirección IP</th>
+              <th style="text-align: center;">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of logs; trackBy: trackByFn">
+              <td><strong>#{{ log.id }}</strong></td>
+              <td class="user-email">{{ log.correoUsuario || 'Usuario General' }}</td>
+              <td>{{ log.fechaHora }}</td>
+              <td><code class="ip-block">Local</code></td>
+              <td style="text-align: center;">
+                <span class="status-badge badge-exitoso">{{ log.estado || 'Exitoso' }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="!cargando && logs.length === 0" class="intro-card" style="text-align: center; border-color: #d1d5db;">
+        <p style="margin: 0; color: #6b7280;">No se registran bitácoras de conexión en la base de datos actualmente.</p>
+      </div>
+    </div>
+  </div>
+
+</div>

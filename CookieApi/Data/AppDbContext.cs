@@ -13,5 +13,7 @@ namespace CookieApi.Data
         }
 
         public DbSet<Policy> Policies { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<LogConexion> LogsConexiones { get; set; }
     }
 }

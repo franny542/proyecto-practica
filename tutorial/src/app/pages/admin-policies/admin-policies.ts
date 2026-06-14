@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from '../../services/cookie.service';
+import { AuthService } from '../../services/auth.service'; // 🟢 Importamos el AuthService
 import { Policy } from '../../models/policy'; 
 
 @Component({
@@ -24,14 +25,25 @@ export class AdminPolicies implements OnInit {
   isEditing = false;
   message = '';
   isLoading = false; 
+  
+  // 🔒 Estructura idéntica a ultimas-conexiones
+  permitido = false;
 
   constructor(
     private cookieService: CookieService,
+    private authService: AuthService, // 🟢 Inyectamos el AuthService
     private cdr: ChangeDetectorRef 
   ) {}
 
   ngOnInit(): void {
-    this.loadPolicies();
+    // 🌟 Validamos el rol antes de hacer cualquier cosa
+    const rol = this.authService.getUserRole()?.toLowerCase().trim();
+    
+    if (rol === 'admin') {
+      this.permitido = true;
+      this.loadPolicies(); // 🔓 Solo carga si está permitido
+    }
+    this.cdr.detectChanges();
   }
 
   loadPolicies() {
