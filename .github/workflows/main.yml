@@ -19,8 +19,15 @@ jobs:
 
       - name: Install dependencies and Build Angular
         run: |
-          npm install
-          npm run build
+          cd $GITHUB_WORKSPACE
+          if [ -f "package.json" ]; then
+            npm install
+            npm run build
+          elif [ -d "tutorial" ]; then
+            cd tutorial && npm install && npm run build
+          else
+            cd * && if [ -f "package.json" ]; then npm install && npm run build; fi
+          fi
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
