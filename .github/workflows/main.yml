@@ -19,5 +19,11 @@ jobs:
 
       - name: Install dependencies and Build Angular
         run: |
-          cd tutorial && npm install
-          cd tutorial && npm run build --if-present
+          npm install
+          npm run build
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'frontend-tutorial'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
